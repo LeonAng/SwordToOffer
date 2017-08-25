@@ -32,11 +32,11 @@ public class Solution4
        {
     	   return null;
        }
-        
+       
        TreeNode root=new TreeNode(pre[startPre]);
        for(int i=startIn;i<=endIn;i++)
        {
-    	   if(in[i]==pre[startPre])
+    	   if(in[i]==pre[startPre])//找到当前根节点在中序遍历中的位置
            {
                root.left=reConstructBinaryTree2(pre,startPre+1,startPre+i-startIn,in,startIn,i-1);
                root.right=reConstructBinaryTree2(pre,i-startIn+startPre+1,endPre,in,i+1,endIn);
@@ -51,6 +51,6 @@ public class Solution4
 		int[] in =new int[] {4,7,2,1,5,3,8,6};
 		
 		TreeNode root = reConstructBinaryTree(pre,in);
-		System.out.println(root.val);
+		System.out.println(root.right.val);
 	}
 }
