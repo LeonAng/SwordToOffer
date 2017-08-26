@@ -1,4 +1,4 @@
-package 剑指offer;
+package 剑指offer_1;
 /**
  * @author 12083
  *把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。 
