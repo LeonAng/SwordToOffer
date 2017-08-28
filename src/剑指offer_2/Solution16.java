@@ -9,12 +9,27 @@ public class Solution16
 {
 	public static ListNode Merge(ListNode list1,ListNode list2) 
 	{
-		ListNode result=null;
-		while(list1!=null&&list2!=null)
+		if(list1==null)
 		{
-			
-		}
-		return result;  
+            return list2;
+        }
+		else if(list2==null)
+        {
+            return list1;
+        }
+		
+        ListNode node = null;
+        if(list1.val<list2.val)
+        {
+            node = list1;
+            node.next = Merge(list1.next,list2);
+        }
+        else
+        {
+            node = list2;
+            node.next = Merge(list1,list2.next);
+        }
+        return node;
     }
 	
 	public static void main(String[] args)
@@ -27,8 +42,8 @@ public class Solution16
 		list1_1.next=list1_2;
 		list1_2.next=list1_3;
 		
-		ListNode list2 = new ListNode(4);
-		ListNode list2_1 = new ListNode(5);
+		ListNode list2 = new ListNode(1);
+		ListNode list2_1 = new ListNode(3);
 		ListNode list2_2 = new ListNode(6);
 		ListNode list2_3 = new ListNode(7);
 		list2.next=list2_1;
