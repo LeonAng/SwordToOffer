@@ -1,4 +1,5 @@
 package 剑指offer_1;
+
 /**
  * @author 12083
  *把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。 
@@ -7,40 +8,38 @@ package 剑指offer_1;
  */
 public class Solution6
 {
-	public static int minNumberInRotateArray(int [] array) 
+	public static int minNumberInRotateArray(int[] array)
 	{
-		if(array.length<=0)
+		if (array.length <= 0)
 		{
 			return 0;
-		}
-		else
+		} else
 		{
-			if(array.length==1)
+			if (array.length == 1)
 			{
 				return array[0];
-		    }
-			
-			for(int i=0;i<array.length-1;i++)
+			}
+
+			for (int i = 0; i < array.length - 1; i++)
 			{
-	            if(array[i]>array[i+1])
-	            {
-	                return array[i+1];
-	            }
-	            else
-	            {
-	                if(i==array.length-2)
-	                {
-	                    return array[0];
-	                }
-	            }
-	        }
+				if (array[i] > array[i + 1])
+				{
+					return array[i + 1];
+				} else
+				{
+					if (i == array.length - 2)
+					{
+						return array[0];
+					}
+				}
+			}
 		}
 		return 0;
 	}
-	
+
 	public static void main(String[] args)
 	{
-		int[] array = new int[]{3,4,5,1,2};
+		int[] array = new int[] { 3, 4, 5, 1, 2 };
 		System.out.println(minNumberInRotateArray(array));
 	}
 }

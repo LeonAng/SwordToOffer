@@ -1,4 +1,5 @@
 package 剑指offer_1;
+
 /**
  * @author 12083
  *请实现一个函数，将一个字符串中的空格替换成“%20”。
@@ -6,19 +7,20 @@ package 剑指offer_1;
  */
 public class Solution2
 {
-	public static String replaceSpace(StringBuffer str) 
+	public static String replaceSpace(StringBuffer str)
 	{
-		while(str.indexOf(" ")!=-1)
+		while (str.indexOf(" ") != -1)
 		{
 			int x = str.indexOf(" ");
 			str.deleteCharAt(x);
 			str.insert(x, "%20");
 		}
 		return str.toString();
-    }
+	}
+
 	public static void main(String[] args)
 	{
-		StringBuffer str =new StringBuffer("We Are Happy");
+		StringBuffer str = new StringBuffer("We Are Happy");
 		System.out.println(replaceSpace(str));
 	}
 

@@ -1,4 +1,5 @@
 package 剑指offer_2;
+
 /**
  * @author Leon
  * @version 创建时间：2017年8月28日 上午9:51:29 
@@ -9,15 +10,17 @@ public class Solution17
 {
 	public static boolean HasSubtree(TreeNode root1, TreeNode root2)
 	{
-		if (root2 == null) return false;
-		if (root1 == null && root2 != null) return false;
-		
+		if (root2 == null)
+			return false;
+		if (root1 == null && root2 != null)
+			return false;
+
 		boolean flag = false;
 		if (root1.val == root2.val)
 		{
-			flag = isSubTree(root1, root2);//以这个根节点为为起点判断是否与Tree2完全相同
+			flag = isSubTree(root1, root2);// 以这个根节点为为起点判断是否与Tree2完全相同
 		}
-		if (!flag)//不包含则分别以左右子节点为起点判断
+		if (!flag)// 不包含则分别以左右子节点为起点判断
 		{
 			flag = HasSubtree(root1.left, root2);
 			if (!flag)
@@ -30,9 +33,11 @@ public class Solution17
 
 	private static boolean isSubTree(TreeNode root1, TreeNode root2)
 	{
-		if (root2 == null) return true;
-		if (root1 == null && root2 != null) return false;
-		
+		if (root2 == null)
+			return true;
+		if (root1 == null && root2 != null)
+			return false;
+
 		if (root1.val == root2.val)
 		{
 			return isSubTree(root1.left, root2.left) && isSubTree(root1.right, root2.right);
@@ -61,6 +66,7 @@ class TreeNode
 	int val = 0;
 	TreeNode left = null;
 	TreeNode right = null;
+
 	public TreeNode(int val)
 	{
 		this.val = val;

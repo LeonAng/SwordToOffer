@@ -1,4 +1,5 @@
 package 剑指offer_2;
+
 /** 
 * @author Leon 
 * @version 创建时间：2017年8月26日 下午9:06:19 
@@ -10,14 +11,15 @@ public class Solution11
 	public static int NumberOf1(int n)
 	{
 		int result = 0;
-        char[]ch=Integer.toBinaryString(n).toCharArray();
-        for(int i=0;i<ch.length;i++)
-        {
-            if(ch[i]=='1') result++;
-        }
-        return result;	
+		char[] ch = Integer.toBinaryString(n).toCharArray();
+		for (int i = 0; i < ch.length; i++)
+		{
+			if (ch[i] == '1')
+				result++;
+		}
+		return result;
 	}
-	
+
 	public static void main(String[] args)
 	{
 		System.out.println(NumberOf1(4));

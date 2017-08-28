@@ -1,4 +1,5 @@
 package 剑指offer_2;
+
 /** 
 * @author Leon 
 * @version 创建时间：2017年8月26日 下午9:28:55 
@@ -14,9 +15,10 @@ public class Solution12
 	{
 		return Math.pow(base, exponent);
 	}
+
 	public static void main(String[] args)
 	{
-		
+
 	}
 
 }

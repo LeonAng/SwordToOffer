@@ -1,4 +1,5 @@
 package 剑指offer_1;
+
 /** 
 * @author Leon 
 * @version 创建时间：2017年8月26日 下午8:37:38 
@@ -35,22 +36,20 @@ f(n) =     1       ,(n=1 )
 */
 public class Solution9
 {
-	public static int JumpFloorII(int target) 
+	public static int JumpFloorII(int target)
 	{
-		if (target <= 0) 
+		if (target <= 0)
 		{
-            return 0;
-        } 
-		else if (target == 1) 
-        {
-            return 1;
-        } 
-		else 
+			return 0;
+		} else if (target == 1)
 		{
-            return 2 * JumpFloorII(target - 1);
-        }
-    }
-	
+			return 1;
+		} else
+		{
+			return 2 * JumpFloorII(target - 1);
+		}
+	}
+
 	public static void main(String[] args)
 	{
 		System.out.println(JumpFloorII(4));

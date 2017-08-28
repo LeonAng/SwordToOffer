@@ -1,4 +1,5 @@
 package 剑指offer_2;
+
 /** 
 * @author Leon 
 * @version 创建时间：2017年8月26日 下午9:39:25 
@@ -8,40 +9,40 @@ package 剑指offer_2;
 */
 public class Solution13
 {
-	public static void reOrderArray(int [] array) 
+	public static void reOrderArray(int[] array)
 	{
-        int[] temp = new int[array.length];
-        int index=0;
-        for(int i=0;i<array.length;i++)
-        {
-        	if(array[i]%2!=0)
-        	{
-        		temp[index]=array[i];
-        		index++;
-        	}
-        }
-        for(int i=0;i<array.length;i++)
-        {
-        	if(array[i]%2==0)
-        	{
-        		temp[index]=array[i];
-        		index++;
-        	}
-        }
-        for(int i=0;i<array.length;i++)
-        {
-        	array[i]=temp[i];
-        }
-    }
-	
+		int[] temp = new int[array.length];
+		int index = 0;
+		for (int i = 0; i < array.length; i++)
+		{
+			if (array[i] % 2 != 0)
+			{
+				temp[index] = array[i];
+				index++;
+			}
+		}
+		for (int i = 0; i < array.length; i++)
+		{
+			if (array[i] % 2 == 0)
+			{
+				temp[index] = array[i];
+				index++;
+			}
+		}
+		for (int i = 0; i < array.length; i++)
+		{
+			array[i] = temp[i];
+		}
+	}
+
 	public static void main(String[] args)
 	{
-		int[] array = new int[] {1,2,3,4,5,6,7,8};
+		int[] array = new int[] { 1, 2, 3, 4, 5, 6, 7, 8 };
 		reOrderArray(array);
-		for(int i=0;i<array.length;i++)
+		for (int i = 0; i < array.length; i++)
 		{
-			System.out.print(array[i]+"	");
+			System.out.print(array[i] + "	");
 		}
-		
+
 	}
 }
