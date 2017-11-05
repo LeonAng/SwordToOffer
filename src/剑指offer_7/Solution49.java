@@ -23,11 +23,59 @@ public class Solution49
 {
 	public static int StrToInt(String str)
 	{
-		return 0;
+		if (str.length() == 0)
+		{
+			return 0;
+		}
+
+		char[] foo = str.toCharArray();
+		int result = 0;
+		// System.out.println(foo[0]);
+
+		for (int i = 1; i < foo.length; i++)
+		{
+			if (foo[i] > '9' || foo[i] < '0')
+			{
+				return 0;
+			}
+		}
+
+		if (foo[0] == '+' || foo[0] == '-')
+		{
+			int digit = str.length() - 1;
+			for (int i = 0; i < digit; i++)
+			{
+				result += (foo[digit - i] - '0') * (int) Math.pow(10, i);
+				// System.out.println(result);
+			}
+			if (foo[0] == '+')
+			{
+				return result;
+			}
+			else
+			{
+				return -1 * result;
+			}
+
+		}
+		else if (foo[0] <= '9' || foo[0] >= '0')
+		{
+			int digit = str.length();
+			for (int i = 0; i < digit; i++)
+			{
+				result += (foo[digit - i - 1] - '0') * (int) Math.pow(10, i);
+				// System.out.println(result);
+			}
+			return result;
+		}
+		else
+		{
+			return 0;
+		}
 	}
 
 	public static void main(String[] args)
 	{
-		System.out.println(StrToInt("+2147483647"));
+		System.out.println(StrToInt("+13214"));
 	}
 }
